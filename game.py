@@ -18,6 +18,8 @@ SECONDS_PER_UPDATE = 1.0 / UPDATES_PER_SECOND
 
 # Objective 1: Create the title and size variables
 # YOUR CODE HERE...
+WINDOW_SIZE = (1000, 600)
+WINDOW_TITLE = "Steven Bill's Pizzaria"
 
 
 class Game:
@@ -83,7 +85,8 @@ def main() -> int:
     controller = Controller()
 
     # Objective 1: Create and show the Window
-    # YOUR CODE HERE...
+    window = Window(WINDOW_TITLE, WINDOW_SIZE)
+    window.show()
 
     # Objective 2: Create the Renderer with a background color
     # YOUR CODE HERE...
