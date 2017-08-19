@@ -1,11 +1,17 @@
-# HookRace
+# HookRace Jr.
 In this project you will be building your own 2D game that will read user input, display graphics, and simulate 2D physics!
 
-### Prerequisites (Ubuntu)
+### Prerequisites (Ubuntu 16.04)
 
-* Python 3.6 (or 3.5 with string interpolation via PyPy 5.8)
-* Install SDL2, SDL2_image, SDL2_ttf via `apt`
-* Install pysdl2 via `pip3` (or `pip_pypy3` if using `pypy3`)
+* Python 3.5
+* Install SDL2, SDL2_image, SDL2_ttf via `apt`:
+    ```bash
+    sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+    ```
+* Install pysdl2 via `pip3`:
+    ```bash
+    pip3 install --user pysdl2
+    ```
 
 > Optional: `mypy`
 
@@ -47,11 +53,15 @@ New Programming Concepts:
 4. Store the created `Window` instance in a `window` variable in the `main` function
 5. Call the `show` method on the `Window` object
 
+Documentation for `Window`:
+
+* https://pysdl2.readthedocs.io/en/rel_0_9_5/modules/sdl2ext_window.html
+
 Resources:<br>
 Classes in Python Practice - https://www.learnpython.org/en/Classes_and_Objects<br>
 Sharing variables across files - http://effbot.org/pyfaq/how-do-i-share-global-variables-across-modules.htm
 
-### Objective 2: The Renderer and Game Loop
+### Objective 2: The Renderer
 
 New Programming Concepts:
 
@@ -59,10 +69,6 @@ New Programming Concepts:
 * RGB colors
 * `while` loop 
 * `break` statement
-
-New Game Concepts:
-
-* Game Loop
 
 **Steps:**
 
@@ -74,6 +80,11 @@ New Game Concepts:
 
 > I used red = 110, green = 132, blue = 174
 
+Documentation for `Renderer` and `Color`:
+
+* https://pysdl2.readthedocs.io/en/rel_0_9_5/modules/sdl2ext_sprite.html
+* https://pysdl2.readthedocs.io/en/rel_0_9_5/modules/sdl2ext_color.html
+
 Questions:
 
 * When does the game loop exit?
@@ -81,13 +92,13 @@ Questions:
 Resources:<br>
 While Loops in Python - https://pythonschool.net/basics/while-loops/
 
-### Objective 3: The Game State and Update Method
+### Objective 3: The Game Loop
 
 New Game Concepts:
 
+* Game Loop
 * Frame 
 * Time Step
-* Update Method
 
 **Steps:**
 
@@ -100,8 +111,6 @@ For step 3. you need to use a `while`-loop, the local `lag` variable, and the `S
 The `lag` variable represents the amount of time in seconds that has yet to be updated. Each time we process a frame, the lag should be decreased by the amount of time that frame represents (i.e. the `SECONDS_PER_UPDATE`).
 
 > Hint: modify the `lag` variable each time though the loop as appropriate, and use it to check for the finished condition
-
-> Try modifying the `UPDATES_PER_SECOND` variable and see what happens
 
 Additional Reading:
 
@@ -204,11 +213,13 @@ New Programming Concepts:
 > Bonus: verify that the width is the same in each line/row of the tilemap
 
 
-### Objective 6: Player Physics
+### Objective 6: The Update Method
 
 New Game Concepts:
+
+* The Update Method
+* Physics Engine
 * Collision Detection
-* The AABB
 
 **Steps:**
 
@@ -240,6 +251,12 @@ Completing step 2 then does:
 9. If any movement along our velocity vector would move us into a solid tile our velocity drops to 0 in that direction, and we move up to the edge of the solid tile in the direction of the vector.
 
 > Bonus: Play with the physics engine components and see what happens
+
+> Bonus: Try modifying the `UPDATES_PER_SECOND` variable and see what happens
+
+Additional Reading:
+
+http://gameprogrammingpatterns.com/update-method.html
 
 ### Objective 7: Camera
 
